@@ -1,0 +1,34 @@
+.section {
+  height: 100vh;
+  min-height: 650px;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+}
+
+.section__title {
+  color: $yellow;
+  line-height: 0.9;
+  font-size: rem(72px);
+  margin-bottom: rem(50px);
+
+  @include gagalin;
+  @include tablets {
+    margin-bottom: rem(35px);
+  }
+  @include phones {
+    font-size: rem(62px);
+  }
+
+  &.section__title_black {
+    color: $black;
+  }
+
+  &.section__title_white {
+    color: white;
+  }
+
+  &_center {
+    text-align: center;
+  }
+}
