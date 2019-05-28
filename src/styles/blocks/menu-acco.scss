@@ -27,11 +27,13 @@
       right: 0;
     }
 
-    .menu-acco__trigger:nth-child(2) {
-      display: block;
+    .menu-acco__trigger {
+      &:nth-child(2) {
+        display: block;
 
-      &-text {
-        color: #fff;
+        .menu-acco__trigger-text {
+          color: #fff;
+        }
       }
     }
 
