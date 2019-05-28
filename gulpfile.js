@@ -85,6 +85,7 @@ gulp.task("watch", () => {
   gulp.watch(`${SRC_DIR}/styles/**/*.scss`, gulp.series("styles"));
   gulp.watch(`${SRC_DIR}/scripts/**/*.js`, gulp.series("scripts"));
   gulp.watch(`${SRC_DIR}/*.html`, gulp.series("templates"));
+  gulp.watch(`${SRC_DIR}/images/**/*.*`, gulp.series("images"));
 });
 
 gulp.task("server", () => {

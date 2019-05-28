@@ -1,16 +1,20 @@
 // ACORDION SECTION REVIEWS
-$(".menu-acco__trigger").on("click", e => {
-  e.preventDefault();
-  const thisTarget = e.currentTarget;
-  const thisItem = thisTarget.parentNode;
-  if (thisItem.classList.contains("active")) {
-    return null;
-  }
-  $(".menu-acco__item").removeClass("active");
-  thisItem.classList.add("active");
-});
 
-$(".menu-close").on("click", e => {
-  e.preventDefault();
-  $(".menu-acco__item").removeClass("active");
-});
+if ($(".menu-acco").length) {
+  $(".menu-acco__trigger").on("click", e => {
+    e.preventDefault();
+    const element = e.currentTarget;
+    const item = element.parentNode;
+    const allItems = $(".menu-acco__item");
+
+    if (!$(item).hasClass("active")) {
+      $(allItems).removeClass("active");
+      $(item).addClass("active");
+    }
+  });
+
+  $(".menu-acco__close").on("click", e => {
+    e.preventDefault();
+    $(".menu-acco__item").removeClass("active");
+  });
+}

@@ -27,37 +27,27 @@
       right: 0;
     }
 
+    .menu-acco__trigger:nth-child(2) {
+      display: block;
+
+      &-text {
+        color: #fff;
+      }
+    }
+
     .menu-acco__trigger-text {
       color: $yellow;
     }
 
     .menu-acco__text {
+      position: initial;
       transform: translate(0);
       opacity: 1;
-    }
-
-    .menu-acco__dec {
-      position: absolute;
-      opacity: 0.8;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      display: block;
-      z-index: -10;
-
-      @include phones {
-        right: 130px;
-      }
-
-      .menu-acco__trigger-text {
-        color: #fff;
-      }
     }
 
     .menu-acco__close {
       @include phones {
         display: block;
-        text-align: right;
       }
     }
 
@@ -67,7 +57,6 @@
     }
 
     @include tablets {
-
       .menu-acco__content {
         max-width: rem(530px);
       }
@@ -80,6 +69,20 @@
   background-size: cover;
   position: relative;
 
+  &:nth-child(2) {
+    display: none;
+    position: absolute;
+    opacity: 0.8;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -10;
+
+    @include phones {
+      right: 130px;
+    }
+  }
+
   &::before {
     content: "";
     position: absolute;
@@ -90,15 +93,18 @@
     background: rgba(20, 20, 20, 0.7);
   }
 
-  &_m {
+  &--meat {
+    background-image: url("../img/bg/menu/meats.jpg");
     background-position: center;
   }
 
-  &_v {
+  &--vegans {
+    background-image: url("../img/bg/menu/vegans.jpg");
     background-position-x: 160px;
   }
 
-  &_d {
+  &--diet {
+    background-image: url("../img/bg/menu/diets.jpg");
     background-position: right;
   }
 
@@ -109,10 +115,6 @@
   @include phones {
     min-width: 50px;
   }
-}
-
-.menu-acco__dec {
-  display: none;
 }
 
 .menu-acco__trigger-text {
@@ -136,19 +138,26 @@
 
 .menu-acco__close {
   display: none;
+  position: absolute;
+  z-index: 100;
+  right: 3%;
+  top: 3%;
+  display: none;
 }
 
 .menu-acco__text {
+  position: absolute;
   @include ubuntu(light);
   line-height: 1.76em;
   font-size: rem(14px);
   color: #fff;
   padding: rem(55px) rem(34px);
   opacity: 0;
-  transform: translate(200%);
-  transition: transform 1s, opacity 3s;
+  transform: translateY(100%);
+  transition: opacity 4s cubic-bezier(0.645, 0.045, 0.355, 1),
+    transform 3s cubic-bezier(0.645, 0.045, 0.355, 1);
 
   @include phones {
-    padding: rem(25px) rem(15px);
+    padding: rem(75px) rem(15px);
   }
 }
